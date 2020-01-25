@@ -11,6 +11,21 @@
 	color: #000000;
 	margin-bottom: 27px;
 	margin-top: 19px;
+	position: relative;
+}
+
+.division-293 .title .previous-icon {
+	position: absolute;
+	transform: translate(-50px, 10px);
+	width: 38px;
+	height: 38px;
+}
+
+.division-293 .title .next-icon {
+	position: absolute;
+  transform: translate(177px, -47px);
+  width: 38px;
+	height: 38px;
 }
 
 .division-293 .calculator {
@@ -72,15 +87,21 @@
 	margin-bottom: 10px;
 }
 
-.division-293 .calculator .calculator-card .card .card-body button{
+.division-293 .calculator .calculator-card .card .card-body button {
 	font-size: 16px;
 	line-height: 21px;
 	letter-spacing: 0.02em;
-	color: #2979FF;
-  background: #D8E6FF;
   border-radius: 10px;
   padding-top: 1px;
   padding-bottom: 1px;
+  text-decoration: none;
+}
+
+.division-293 .calculator .calculator-card .card .card-body button img {
+	width: 15px;
+	height: 15px;
+	margin-left: 3px;
+	margin-top: -4px;
 }
 
 .division-293 .calculator .calculator-card .card .card-body label {
@@ -250,7 +271,7 @@ section div.left-4 {
 	}
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 767px) {
 	.division-293 .title h1 {
 		font-size: 18px;
 		line-height: 21px;
@@ -274,6 +295,32 @@ section div.left-4 {
 	.division-293 .calculator .calculator-card .card .card-body {
 		padding-left: 5px;
 		padding-right: 20px;
+	}
+
+	.division-293 .title .previous-icon {
+		position: absolute;
+		transform: translate(-20px, 2px);
+		width: 18px;
+		height: 18px;
+	}
+
+	.division-293 .title .next-icon {
+		position: absolute;
+	  transform: translate(75px, -19px);
+	  width: 18px;
+		height: 18px;
+	}
+
+	.division-293 .calculator .calculator-card .card .card-body button {
+		font-size: 14px;
+		line-height: 19px;
+	}
+
+	.division-293 .calculator .calculator-card .card .card-body button img {
+		width: 12px;
+		height: 12px;
+		margin-left: 3px;
+		margin-top: -4px;
 	}
 
 	footer {

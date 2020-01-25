@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Header from './component/Header';
 import Footer from './component/Footer';
 import { Container, Card, Button, Form, Row, Col, Accordion } from 'react-bootstrap'
+import previous_icon from './assets/images/chevron-circle-left-solid.svg';
+import next_icon from './assets/images/chevron-circle-right-solid.svg';
+import down_icon from './assets/images/chevron-circle-down-solid.svg';
+import up_icon from './assets/images/chevron-circle-up-solid.svg';
 import './App.css';
 
 const App = (props) => {
@@ -85,7 +89,9 @@ const App = (props) => {
         <Container className="division-293">
           <div className="title">
             <h1>
+              <img src={previous_icon} className="previous-icon" alt="previous" />
               DIVISION 293 CALCULATOR<br/>AUSTRALIA
+              <img src={next_icon} className="next-icon" alt="next" />
             </h1>
           </div>
           <div className="calculator">
@@ -122,8 +128,8 @@ const App = (props) => {
                         {visible ? <Form.Label>(g)</Form.Label> : null }
                       </Col>
                     </Form.Group>
-                    <Accordion.Toggle as={Button} variant="link" eventKey="1" onClick={() => handleShow()}>
-                      { !visible ? "Show Detail" : "Hide detail"}
+                    <Accordion.Toggle as={Button} variant="link" eventKey="1" onClick={() => handleShow()} style={{ backgroundColor: visible ? "#FFDC99" : "#D8E6FF", color: visible ? "#A37314" : "#2979FF" }}>
+                      { !visible ? <span>Show detail<img src={down_icon} className="down-icon" alt="down" /></span> : <span>Hide detail<img src={up_icon} className="up-icon" alt="up" /></span>}
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="1">
                       <Card.Body>
