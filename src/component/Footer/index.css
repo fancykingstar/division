@@ -1,0 +1,17 @@
+footer {
+	background-color: #355C7D;
+	height: 39px;
+	margin-top: 150px;
+}
+
+footer p {
+	text-align: center;
+	color: #ffffff;
+	font-family: Red Hat Display;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 0.0044em;
+	padding-top: 10px;
+}

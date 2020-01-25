@@ -1,0 +1,14 @@
+.navbar {
+	background-color: #355C7D;
+	height: 50px;
+}
+
+.navbar-light .navbar-brand {
+	color: #ffffff !important;
+	font-family: 'Red Hat Display';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 26px;
+	letter-spacing: -0.02em;
+}

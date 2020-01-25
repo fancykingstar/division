@@ -1,38 +1,292 @@
-.App {
-  text-align: center;
+.division-293.container {
+	max-width: 1000px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.division-293 .title h1 {
+	text-align: center;
+	font-weight: bold;
+	font-size: 42px;
+	line-height: 56px;
+	letter-spacing: 0.03em;
+	color: #000000;
+	margin-bottom: 27px;
+	margin-top: 19px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.division-293 .calculator {
+	width: 470px;
+  margin: 0 auto;
+}
+
+.division-293 .content {
+	padding: 0 165px;
+}
+
+.division-293 .calculator > h5 {
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 26px;
+	text-align: center;
+	letter-spacing: 0.02em;
+	color: #000000;
+	margin-bottom: 20px;
+}
+
+.division-293 .calculator .calculator-card {
+	padding: 0 50px;
+}
+
+.division-293 .calculator .calculator-card .card {
+	border-radius: 10px;
+}
+
+.division-293 .calculator .calculator-card .card .card-header {
+	background-color: #888888;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 21px;
+	text-align: center;
+	letter-spacing: 0.02em;
+
+	color: #FFFFFF;
+}
+
+.division-293 .calculator .calculator-card .card .card-body {
+	background-color: #F5FFB8;
+	padding-left: 15px;
+	padding-right: 35px;
+	text-align: right;
+}
+
+.division-293 .calculator .calculator-card .card .card-body div.form-group {
+	align-items: center;
+}
+
+.division-293 .calculator .calculator-card .card .card-body .card-body {
+	padding: 10px 0 0 0;
+}
+
+.division-293 .calculator .calculator-card .card > .card-body > div:nth-child(3) {
+	margin-bottom: 10px;
+}
+
+.division-293 .calculator .calculator-card .card .card-body button{
+	font-size: 16px;
+	line-height: 21px;
+	letter-spacing: 0.02em;
+	color: #2979FF;
+  background: #D8E6FF;
+  border-radius: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.division-293 .calculator .calculator-card .card .card-body label {
+	line-height: 18px;
+	text-align: right;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 0;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 0.02em;
+	color: #000000;
+}
+
+.division-293 .calculator .calculator-card .card .card-body div[class*="col-sm"] {
+	padding-left: 5px;
+}
+
+.division-293 .calculator .calculator-card .card .card-body .form-group label:nth-child(2) {
+	padding-left: 5px;
+	font-size: 12px;
+	line-height: 16px;
+	letter-spacing: 0.02em;
+	text-align: center;
+
+	color: #848489;
+}
+
+.division-293 .calculator .calculator-card .card .card-body div[class*="col-sm"] input{
+	border: 1px solid #B4B4BB;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+
+.division-293 .calculator .calculator-card p {
+	margin-top: 10px;
+	font-size: 14px;
+	line-height: 19px;
+	text-align: center;
+	letter-spacing: 0.02em;
+	color: #000000;
+	margin-bottom: 40px;
+}
+
+.division-293 .content h4 {
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 32px;
+	text-align: justify;
+	letter-spacing: 0.0044em;
+	color: #000000;
+	margin-bottom: 20px;
+}
+
+.division-293 .content div {
+	font-size: 20px;
+	line-height: 26px;
+	text-align: justify;
+	letter-spacing: 0.02em;
+	color: #000000;
+	margin-bottom: 20px;
+}
+
+.division-293 .content div ul {
+	padding-left: 20px;
+}
+
+section {
+	position: relative;
+	overflow: hidden;
+}
+
+section div.right-1 {
+	position: absolute;
+  width: 180px;
+  height: 180px;
+  right: -90px;
+  top: 111px;
+  background: #F8B195;
+  transform: rotate(-45deg);
+}
+
+section div.right-2 {
+	position: absolute;
+  width: 122px;
+  height: 122px;
+  right: -70px;
+  top: 328px;
+  background: #F67280;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+section div.right-3 {
+	position: absolute;
+  width: 122px;
+  height: 122px;
+  right: -85px;
+  top: 975px;
+  background: #F8B195;
+  transform: rotate(-45deg);
+}
+
+section div.right-4 {
+	position: absolute;
+  width: 102px;
+  height: 102px;
+  right: -90px;
+  bottom: 280px;
+  background: #F67280;
+  transform: rotate(-45deg);
+}
+
+section div.left-1 {
+	position: absolute;
+  width: 122px;
+  height: 122px;
+  left: -70px;
+  top: 285px;
+  background: #F67280;
+  transform: rotate(-45deg);
+}
+
+section div.left-2 {
+	position: absolute;
+  width: 102px;
+  height: 102px;
+  left: -85px;
+  top: 450px;
+  background: #F8B195;
+  transform: rotate(-45deg);
+}
+
+section div.left-3 {
+	position: absolute;
+  width: 102px;
+  height: 102px;
+  left: -95px;
+  top: 1100px;
+  background: #F67280;
+  transform: rotate(-45deg);
+}
+
+section div.left-4 {
+	position: absolute;
+  width: 102px;
+  height: 102px;
+  left: -95px;
+  bottom: 400px;
+  background: #F8B195;
+  transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 997px) {
+	.division-293 .content {
+    padding: 0 135px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+  section div.left-1, section div.left-2, section div.left-3, section div.left-4, section div.right-1, section div.right-2, section div.right-3, section div.right-4 {
+  	display: none;
   }
+
+  .division-293 .content {
+    padding: 0 14px;
+	}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media screen and (max-width: 620px) {
+	.division-293 .title h1 {
+		font-size: 18px;
+		line-height: 21px;
+		margin-bottom: 10px;
+	}
+
+	.division-293 .calculator > h5 {
+		font-size: 16px;
+		line-height: 21px;
+	}
+
+	.division-293 .calculator .calculator-card p {
+		font-size: 12px;
+		line-height: 16px;
+	}
+
+	.division-293 .content div {
+		text-align: left;
+	}
+
+	.division-293 .calculator .calculator-card .card .card-body {
+		padding-left: 5px;
+		padding-right: 20px;
+	}
+
+	footer {
+		margin-top: 50px;
+	}
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media screen and (max-width: 520px) {
+	.division-293 .calculator {
+		width: 100%
+	}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	.division-293 .calculator .calculator-card {
+		padding: 0;
+	}
 }
