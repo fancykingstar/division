@@ -16,11 +16,11 @@ const App = (props) => {
   const [visible, setVisible] = useState(false);
   const [inputA, setInputA] = useState("");
   const [inputB, setInputB] = useState("");
-  const [inputC, setInputC] = useState("");
+  const [inputC, setInputC] = useState(0);
   const inputD = 250000;
-  const [inputE, setInputE] = useState("");
-  const [inputF, setInputF] = useState("");
-  const [inputG, setInputG] = useState("");
+  const [inputE, setInputE] = useState(0);
+  const [inputF, setInputF] = useState(0);
+  const [inputG, setInputG] = useState(0);
 
   const handleShow = () => {
     setVisible(!visible);
@@ -70,7 +70,8 @@ const App = (props) => {
     document.body.appendChild(script);
 
     const s = document.createElement("script");
-    s.type = "";
+    s.src="./script.js";
+    s.async = true;
 
     return () => {
       document.body.removeChild(script);
@@ -99,9 +100,10 @@ const App = (props) => {
     if (inf) {
       let number = parseInt(parseInt(inf) * 15 / 100);
       if ((parseInt(inf) * 15 / 100) - number >= 0.5) number = number + 1;
+      console.log(number);
       setInputG(number)
     } else {
-      setInputG("")
+      setInputG(0)
     }
   }, [inputF])
 
@@ -147,7 +149,7 @@ const App = (props) => {
                         Division 293 Tax Owing
                       </Form.Label>
                       <Col sm="6" xs="6">
-                        <Form.Control type="text" className="input-g" value={inputG ? `$${numberWithCommas(inputG)}` : ""} />
+                        <Form.Control type="text" className="input-g" value={inputG || inputG == 0 ? `$${numberWithCommas(inputG)}` : ""} />
                         {visible ? <Form.Label>(g)</Form.Label> : null }
                       </Col>
                     </Form.Group>
@@ -164,7 +166,7 @@ const App = (props) => {
                             (a+b)
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-c" value={inputC ? `$${numberWithCommas(inputC)}` : ""} />
+                            <Form.Control type="text" className="input-c" value={inputC ? `$${numberWithCommas(inputC)}` : "$0"} />
                             {visible ? <Form.Label>(c)</Form.Label> : null }
                           </Col>
                         </Form.Group>
@@ -175,7 +177,7 @@ const App = (props) => {
                            <Form.Label column sm="2" xs="2">
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-d" defaultValue={inputD ? `$${numberWithCommas(inputD)}` : ""} disabled={true} />
+                            <Form.Control type="text" className="input-d" defaultValue={inputD ? `$${numberWithCommas(inputD)}` : "$0"} disabled={true} />
                             {visible ? <Form.Label>(d)</Form.Label> : null }
                           </Col>
                         </Form.Group>
@@ -187,7 +189,7 @@ const App = (props) => {
                             (c-d)
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-e" value={inputE ? `$${numberWithCommas(inputE)}` : ""} />
+                            <Form.Control type="text" className="input-e" value={inputE ? `$${numberWithCommas(inputE)}` : "$0"} />
                             {visible ? <Form.Label>(e)</Form.Label> : null }
                           </Col>
                         </Form.Group>
@@ -199,7 +201,7 @@ const App = (props) => {
                             Lessor of (b) or (e) 
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-f" value={inputF ? `$${numberWithCommas(inputF)}` : ""} />
+                            <Form.Control type="text" className="input-f" value={inputF ? `$${numberWithCommas(inputF)}` : "$0"} />
                             {visible ? <Form.Label>(f)</Form.Label> : null }
                           </Col>
                         </Form.Group>
@@ -211,7 +213,7 @@ const App = (props) => {
                             (f) x 15%
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-g" value={inputG ? `$${numberWithCommas(inputG)}` : ""} />
+                            <Form.Control type="text" className="input-g" value={inputG || inputG == 0 ? `$${numberWithCommas(inputG)}` : "$0"} />
                             {visible ? <Form.Label>(g)</Form.Label> : null }
                           </Col>
                         </Form.Group>
@@ -232,7 +234,7 @@ const App = (props) => {
 
               In simple terms, everyday income earners pay 15% tax on superannuation contributions, high income earners, as determined by the ATO’s  Division 293 threshold, will pay 30% tax on all (or some) of their super contributions in a given financial year.
             </div>
-            <h4>What do I do if I receive a Division 293 notice?</h4>
+            <h4>Who does it apply to?</h4>
             <div>
               People with Division 293 Income above 250,000 p.a. may be required to pay the additional 15% tax on their concessional superannuation contributions in a given financial year.<br/><br/>
 
@@ -268,7 +270,7 @@ const App = (props) => {
 
               Individuals who are not high income earners can still be liable for the tax if they received a once off lump sum payment which tips them over the $250,000 limit in a given financial year.
             </div>
-            <h4>Who does it apply to?</h4>
+            <h4>What do I do if I receive a Division 293 notice?</h4>
             <div>
               Once a Division 293 notice is received from the ATO, there is a a tax liability owing within around 60 days. The individual can elect to pay the tax directly from their personal funds or they can arrange to release the money from their superannuation fund to pay the tax.<br/><br/>
 

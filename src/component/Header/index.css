@@ -1,6 +1,7 @@
 .navbar {
 	background-color: #355C7D;
 	height: 50px;
+	padding-left: 30px !important;
 }
 
 .navbar-light .navbar-brand {
@@ -10,5 +11,16 @@
 	font-weight: bold;
 	font-size: 20px;
 	line-height: 26px;
-	letter-spacing: -0.02em;
+	z-index: 5;
+}
+
+.red-line {
+	position: absolute;
+    width: 155px;
+    height: 12px;
+    background: #F2727F;
+    bottom: 12px;
+    left: 5px;
+    border-radius: 3px;
+    z-index: -1;
 }

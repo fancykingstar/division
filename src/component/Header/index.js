@@ -5,7 +5,7 @@ import './index.css';
 const Header = () => {
   return (
     <Navbar>
-	    <Navbar.Brand href="#home">Division 293.com</Navbar.Brand>
+	    <Navbar.Brand href="#home"><span>Division 293.com</span><div className="red-line"></div></Navbar.Brand>
 		</Navbar>
   );
 }
