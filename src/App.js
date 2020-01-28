@@ -8,12 +8,16 @@ import down_icon from './assets/images/chevron-circle-down-solid.svg';
 import up_icon from './assets/images/chevron-circle-up-solid.svg';
 import './App.css';
 
+function numberWithCommas(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
 const App = (props) => {
   const [visible, setVisible] = useState(false);
   const [inputA, setInputA] = useState("");
   const [inputB, setInputB] = useState("");
   const [inputC, setInputC] = useState("");
-  const [inputD, setInputD] = useState("");
+  const inputD = 250000;
   const [inputE, setInputE] = useState("");
   const [inputF, setInputF] = useState("");
   const [inputG, setInputG] = useState("");
@@ -32,10 +36,12 @@ const App = (props) => {
   }
 
   const handleInputA = e => {
-    setInputA(e.target.value);
+    let value = e.target.value.replace("$", "");
+    value = value.replace(/,/g, "");
+    setInputA(value);
     let inC = ""
-    if (e.target.value) {
-      inC = inC + parseInt(e.target.value);
+    if (value) {
+      inC = inC + parseInt(value);
     }
     if (inputB) {
       inC = inC !== "" && inC ? parseInt(inC) + parseInt(inputB) : parseInt(inputB)
@@ -44,12 +50,13 @@ const App = (props) => {
   }
 
   const handleInputB = e => {
-    setInputB(e.target.value);
+    const value = e.target.value.replace("$", "").replace(/,/g, "");
+    setInputB(value);
     let inC = "";
     let inG = "";
-    if (e.target.value) {
-      inC = inC + parseInt(e.target.value);
-      inG = inG + parseInt(parseInt(e.target.value) * 15 / 100);
+    if (value) {
+      inC = inC + parseInt(value);
+      inG = inG + parseInt(parseInt(value) * 15 / 100);
     }
     if (inputA){
       inC = inC !== "" && inC ? parseInt(inC) + parseInt(inputA) : parseInt(inputA)
@@ -64,23 +71,17 @@ const App = (props) => {
     setInputF(inF);
   }, [inputB, inputE])
 
-  const handleInputD = e => {
-    setInputD(e.target.value);
-    let inE = "";
-    if (e.target.value) {
-      if (inputC) {
-        if (parseInt(e.target.value) > parseInt(inputC)) setInputE("");
-        else {
-          inE = parseInt(inputC) - parseInt(e.target.value);
-          setInputE(inE);
-        }
-      } else {
-        setInputE("");
-      }
-    } else {
-      inputC ? setInputE(inputC) : setInputE("");
-    }
-  }
+  useEffect(() => {
+    if (inputC ) {
+      if (parseInt(inputC) > parseInt(inputD)) setInputE(parseInt(inputC) - parseInt(inputD));
+      else setInputE(0);
+    } else setInputE("");
+  }, [inputC])
+
+  useEffect(() => {
+
+    inputA ? setInputA(inputA) : setInputA("")
+  }, [inputA])
 
   return (
     <>
@@ -106,7 +107,7 @@ const App = (props) => {
                         Taxable Income (approx. p.a.)
                       </Form.Label>
                       <Col sm="6" xs="6">
-                        <Form.Control type="text" className="input-a" value={inputA} onChange={e => handleInputA(e)} />
+                        <Form.Control type="text" className="input-a" value={inputA ? `$${numberWithCommas(inputA)}` : ""} onChange={e => handleInputA(e)} />
                         {visible ? <Form.Label>(a)</Form.Label> : null }
                       </Col>
                     </Form.Group>
@@ -115,7 +116,7 @@ const App = (props) => {
                         Superannuation Contributions p.a.
                       </Form.Label>
                       <Col sm="6" xs="6">
-                        <Form.Control type="text" className="input-b" value={inputB} onChange={e => handleInputB(e)} />
+                        <Form.Control type="text" className="input-b" value={inputB ? `$${numberWithCommas(inputB)}` : ""} onChange={e => handleInputB(e)} />
                         {visible ? <Form.Label>(b)</Form.Label> : null }
                       </Col>
                     </Form.Group>
@@ -124,7 +125,7 @@ const App = (props) => {
                         Division 293 Tax Owing
                       </Form.Label>
                       <Col sm="6" xs="6">
-                        <Form.Control type="text" className="input-g" defaultValue={inputG} />
+                        <Form.Control type="text" className="input-g" value={inputG ? `$${numberWithCommas(inputG)}` : ""} />
                         {visible ? <Form.Label>(g)</Form.Label> : null }
                       </Col>
                     </Form.Group>
@@ -141,7 +142,7 @@ const App = (props) => {
                             (a+b)
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-c" defaultValue={inputC} />
+                            <Form.Control type="text" className="input-c" value={inputC ? `$${numberWithCommas(inputC)}` : ""} />
                             {visible ? <Form.Label>(c)</Form.Label> : null }
                           </Col>
                         </Form.Group>
@@ -152,7 +153,7 @@ const App = (props) => {
                            <Form.Label column sm="2" xs="2">
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-d" value={inputD} onChange={e => handleInputD(e)} />
+                            <Form.Control type="text" className="input-d" defaultValue={inputD ? `$${numberWithCommas(inputD)}` : ""} disabled={true} />
                             {visible ? <Form.Label>(d)</Form.Label> : null }
                           </Col>
                         </Form.Group>
@@ -164,7 +165,7 @@ const App = (props) => {
                             (c-d)
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-e" defaultValue={inputE} />
+                            <Form.Control type="text" className="input-e" value={inputE ? `$${numberWithCommas(inputE)}` : ""} />
                             {visible ? <Form.Label>(e)</Form.Label> : null }
                           </Col>
                         </Form.Group>
@@ -176,7 +177,7 @@ const App = (props) => {
                             Lessor of (b) or (e) 
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-f" defaultValue={inputF} />
+                            <Form.Control type="text" className="input-f" value={inputF ? `$${numberWithCommas(inputF)}` : ""} />
                             {visible ? <Form.Label>(f)</Form.Label> : null }
                           </Col>
                         </Form.Group>
@@ -188,7 +189,7 @@ const App = (props) => {
                             (f) x 15%
                           </Form.Label>
                           <Col sm="4" xs="4">
-                            <Form.Control type="text" className="input-g" defaultValue={inputG} />
+                            <Form.Control type="text" className="input-g" value={inputG ? `$${numberWithCommas(inputG)}` : ""} />
                             {visible ? <Form.Label>(g)</Form.Label> : null }
                           </Col>
                         </Form.Group>

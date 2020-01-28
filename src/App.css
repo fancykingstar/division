@@ -132,8 +132,8 @@
 
 .division-293 .calculator .calculator-card .card .card-body div[class*="col-sm"] input{
 	border: 1px solid #B4B4BB;
-  box-sizing: border-box;
-  border-radius: 7px;
+	box-sizing: border-box;
+	border-radius: 7px;
 }
 
 .division-293 .calculator .calculator-card p {
@@ -176,88 +176,92 @@ section {
 
 section div.right-1 {
 	position: absolute;
-  width: 180px;
-  height: 180px;
-  right: -90px;
-  top: 111px;
-  background: #F8B195;
-  transform: rotate(-45deg);
+	width: 180px;
+	height: 180px;
+	right: -90px;
+	top: 111px;
+	background: #F8B195;
+	transform: rotate(-45deg);
 }
 
 section div.right-2 {
 	position: absolute;
-  width: 122px;
-  height: 122px;
-  right: -70px;
-  top: 328px;
-  background: #F67280;
-  transform: rotate(-45deg);
-  z-index: -1;
+	width: 122px;
+	height: 122px;
+	right: -70px;
+	top: 328px;
+	background: #F67280;
+	transform: rotate(-45deg);
+	z-index: -1;
 }
 
 section div.right-3 {
 	position: absolute;
-  width: 122px;
-  height: 122px;
-  right: -85px;
-  top: 975px;
-  background: #F8B195;
-  transform: rotate(-45deg);
+	width: 122px;
+	height: 122px;
+	right: -85px;
+	top: 975px;
+	background: #F8B195;
+	transform: rotate(-45deg);
 }
 
 section div.right-4 {
 	position: absolute;
-  width: 102px;
-  height: 102px;
-  right: -90px;
-  bottom: 280px;
-  background: #F67280;
-  transform: rotate(-45deg);
+	width: 102px;
+	height: 102px;
+	right: -90px;
+	bottom: 280px;
+	background: #F67280;
+	transform: rotate(-45deg);
 }
 
 section div.left-1 {
 	position: absolute;
-  width: 122px;
-  height: 122px;
-  left: -70px;
-  top: 285px;
-  background: #F67280;
-  transform: rotate(-45deg);
+	width: 122px;
+	height: 122px;
+	left: -70px;
+	top: 285px;
+	background: #F67280;
+	transform: rotate(-45deg);
 }
 
 section div.left-2 {
 	position: absolute;
-  width: 102px;
-  height: 102px;
-  left: -85px;
-  top: 450px;
-  background: #F8B195;
-  transform: rotate(-45deg);
+	width: 102px;
+	height: 102px;
+	left: -85px;
+	top: 450px;
+	background: #F8B195;
+	transform: rotate(-45deg);
 }
 
 section div.left-3 {
 	position: absolute;
-  width: 102px;
-  height: 102px;
-  left: -95px;
-  top: 1100px;
-  background: #F67280;
-  transform: rotate(-45deg);
+	width: 102px;
+	height: 102px;
+	left: -95px;
+	top: 1100px;
+	background: #F67280;
+	transform: rotate(-45deg);
 }
 
 section div.left-4 {
 	position: absolute;
-  width: 102px;
-  height: 102px;
-  left: -95px;
-  bottom: 400px;
-  background: #F8B195;
-  transform: rotate(-45deg);
+	width: 102px;
+	height: 102px;
+	left: -95px;
+	bottom: 400px;
+	background: #F8B195;
+	transform: rotate(-45deg);
+}
+
+input {
+	text-align: right;
 }
 
 @media screen and (max-width: 997px) {
 	.division-293 .content {
-    padding: 0 135px;
+  	padding: 0 135px;
 	}
 }
 
