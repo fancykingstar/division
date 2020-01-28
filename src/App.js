@@ -53,17 +53,29 @@ const App = (props) => {
     const value = e.target.value.replace("$", "").replace(/,/g, "");
     setInputB(value);
     let inC = "";
-    let inG = "";
     if (value) {
       inC = inC + parseInt(value);
-      inG = inG + parseInt(parseInt(value) * 15 / 100);
     }
     if (inputA){
       inC = inC !== "" && inC ? parseInt(inC) + parseInt(inputA) : parseInt(inputA)
     }
     setInputC(inC);
-    setInputG(inG);
   }
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.googletagmanager.com/gtag/js?id=UA-157087099-1";
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    const s = document.createElement("script");
+    s.type = "";
+
+    return () => {
+      document.body.removeChild(script);
+    }
+  })
 
   useEffect(() => {
     let inF = ""
@@ -79,9 +91,19 @@ const App = (props) => {
   }, [inputC])
 
   useEffect(() => {
-
     inputA ? setInputA(inputA) : setInputA("")
   }, [inputA])
+
+  useEffect(() => {
+    let inf = inputF;
+    if (inf) {
+      let number = parseInt(parseInt(inf) * 15 / 100);
+      if ((parseInt(inf) * 15 / 100) - number >= 0.5) number = number + 1;
+      setInputG(number)
+    } else {
+      setInputG("")
+    }
+  }, [inputF])
 
   return (
     <>
@@ -210,7 +232,7 @@ const App = (props) => {
 
               In simple terms, everyday income earners pay 15% tax on superannuation contributions, high income earners, as determined by the ATO’s  Division 293 threshold, will pay 30% tax on all (or some) of their super contributions in a given financial year.
             </div>
-            <h4>Who does it apply to?</h4>
+            <h4>What do I do if I receive a Division 293 notice?</h4>
             <div>
               People with Division 293 Income above 250,000 p.a. may be required to pay the additional 15% tax on their concessional superannuation contributions in a given financial year.<br/><br/>
 
