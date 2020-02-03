@@ -63,22 +63,6 @@ const App = (props) => {
   }
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=UA-157087099-1";
-    script.async = true;
-
-    document.body.appendChild(script);
-
-    const s = document.createElement("script");
-    s.src="./script.js";
-    s.async = true;
-
-    return () => {
-      document.body.removeChild(script);
-    }
-  })
-
-  useEffect(() => {
     let inF = ""
     inF = inputB || inputE ? Math.min(inputB, inputE) : "";
     setInputF(inF);
